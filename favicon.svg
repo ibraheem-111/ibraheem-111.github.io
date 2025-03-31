@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circuit board background pattern -->
+    <rect width="32" height="32" rx="6" fill="#2a2a72"/>
+    
+    <!-- Minimalist robot face -->
+    <circle cx="10" cy="12" r="3" fill="#009ffd"/> <!-- Left eye -->
+    <circle cx="22" cy="12" r="3" fill="#009ffd"/> <!-- Right eye -->
+    
+    <!-- Circuit lines -->
+    <path d="M6 20H26" stroke="#009ffd" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 20V26" stroke="#009ffd" stroke-width="2" stroke-linecap="round"/>
+    <path d="M10 26H22" stroke="#009ffd" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Additional circuit details -->
+    <circle cx="16" cy="26" r="1" fill="#009ffd"/>
+    <circle cx="10" cy="26" r="1" fill="#009ffd"/>
+    <circle cx="22" cy="26" r="1" fill="#009ffd"/>
+</svg> 
