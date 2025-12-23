@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Ibraheem | Robotics & Autonomous Systems</title>
-    
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Muhammad Ibraheem - MS Robotics and Autonomous Systems student at Arizona State University. Experienced in ROS/ROS2, Machine Learning, AI, and robotics systems development.">
+    <meta name="keywords" content="Muhammad Ibraheem, Robotics, ROS, ROS2, Machine Learning, AI, Autonomous Systems, Arizona State University, ASU, GHOST Lab">
+    <meta name="author" content="Muhammad Ibraheem">
+    <link rel="canonical" href="https://ibraheem-111.github.io">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Muhammad Ibraheem | Robotics & Autonomous Systems">
+    <meta property="og:description" content="MS Robotics student at ASU specializing in autonomous systems, ROS/ROS2, and AI. Research experience at GHOST Lab.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ibraheem-111.github.io">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Ibraheem | Robotics & Autonomous Systems">
+    <meta name="twitter:description" content="MS Robotics student at ASU specializing in autonomous systems, ROS/ROS2, and AI.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="mask-icon" href="/favicon.svg" color="#2a2a72">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,7 +42,6 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#academic">Academic</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -34,19 +52,18 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Muhammad Ibraheem</h1>
-            <p class="subtitle">Masters Student in Robotics & Autonomous Systems</p>
-            <div class="hero-cta">
-                <a href="#about" class="btn btn-primary">Learn More</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
+    <section id="about" class="about hero-merged">
         <div class="container">
+            <div class="hero-header">
+                <h1>Muhammad Ibraheem</h1>
+                <p class="subtitle">Masters Student in Robotics & Autonomous Systems</p>
+                <div class="hero-cta">
+                    <a href="ibraheem_12142025_robotics_and_ai.pdf" download class="btn btn-outline" aria-label="Download Resume PDF">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
@@ -55,20 +72,24 @@
                         <h3>Technical Skills</h3>
                         <div class="skills-grid">
                             <div class="skill-category">
-                                <h4>Programming Languages</h4>
+                                <h4>Robotics & AI</h4>
                                 <div class="skill-tags">
-                                    <span>Python (2 YOE)</span>
-                                    <span>MATLAB</span>
-                                    <span>Go</span>
-                                    <span>C++</span>
+                                    <span>ROS/ROS2</span>
+                                    <span>Gazebo</span>
+                                    <span>Pytorch</span>
+                                    <span>SLAM</span>
+                                    <span>Reinforcement Learning</span>
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h4>Data & Analysis</h4>
+                                <h4>Programming</h4>
                                 <div class="skill-tags">
+                                    <span>Python</span>
+                                    <span>CUDA</span>
+                                    <span>C++</span>
                                     <span>SQL</span>
-                                    <span>Pandas</span>
-                                    <span>TensorFlow</span>
+                                    <span>Linux</span>
+                                    <span>Docker</span>
                                 </div>
                             </div>
                             <div class="skill-category">
@@ -77,7 +98,7 @@
                                     <span>SOLIDWORKS</span>
                                     <span>Creo</span>
                                     <span>ANSYS</span>
-                                    <span>MSC ADAMS</span>
+                                    <span>MSC Adams</span>
                                 </div>
                             </div>
                         </div>
@@ -99,18 +120,18 @@
                     <p>Systems Engineering Focus</p>
                     <div class="academic-details">
                         <span class="institution">Arizona State University</span>
-                        <span class="year">August 2025-Present</span>
-                        <span class="location">Phoenix, AZ</span>
+                        <span class="year">August 2025 - May 2027</span>
+                        <span class="location">Tempe, AZ</span>
                     </div>
+                    <p class="academic-achievement">GPA: 3.89</p>
                 </div>
                 <div class="academic-item">
                     <h3>Bachelor of Science in Mechanical Engineering</h3>
                     <div class="academic-details">
                         <span class="institution">Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI)</span>
-                        <span class="year">February 2023</span>
+                        <span class="year">August 2018 - February 2023</span>
                         <span class="location">Topi, Pakistan</span>
                     </div>
-                    <p class="academic-achievement">GRE Score: 330 (167 Q, 163 V)</p>
                 </div>
             </div>
         </div>
@@ -118,28 +139,20 @@
 
     <section id="experience" class="experience">
         <div class="container">
-            <h2>Work Experience</h2>
+            <h2>Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
-                    <div class="experience-date">November 2024 - Present</div>
+                    <div class="experience-date">December 2023 - July 2025</div>
                     <div class="experience-content">
                         <h3>Data Scientist</h3>
-                        <h4>tkxel - Lahore, Pakistan</h4>
-                        <p>Leading AI and machine learning initiatives with significant achievements in automation and efficiency improvements.</p>
+                        <h4>Tkxel (Software and AI Consultancy) - Lahore, Pakistan</h4>
+                        <p>Helped clients improve productivity and solve business problems using ML and AI.</p>
                         <ul class="experience-achievements">
-                            <li>Trained a Multilayered Perceptron regressor for software effort estimation with 15% accuracy</li>
-                            <li>Developed an AI copilot for sales executives reducing query resolution time by 75%</li>
-                            <li>Led the development of organizational AI applications and conducted department-wide training</li>
-                            <li>Implemented UMAP dimensionality reduction and Gaussian Mixture Models for clustering</li>
+                            <li>Trained a Neural Network in Pytorch that estimated software engineering effort with a 15% error</li>
+                            <li>Used Bayesian Inference with LLMs to audit cybersecurity compliance records of corporations</li>
+                            <li>Developed an AI diagram generator that reduced solution diagram generation time by 50%</li>
+                            <li>Built a multi agent organizational AI Assistant with document level authorization built-in</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-date">December 2023 - October 2024</div>
-                    <div class="experience-content">
-                        <h3>Associate Data Scientist</h3>
-                        <h4>tkxel - Lahore, Pakistan</h4>
-                        <p>Focused on developing and implementing machine learning solutions and AI enablement tools.</p>
                     </div>
                 </div>
                 <div class="experience-item">
@@ -167,19 +180,21 @@
                         <div class="image-placeholder"></div>
                     </div>
                     <div class="project-content">
-                        <h3>Throat Swab Sampling Robot</h3>
-                        <p>Final Year Project (Capstone Project) achieving 3rd position in industrial open house competition.</p>
+                        <h3>Nonlinear Peer-Aware Cost Estimation</h3>
+                        <p>Ongoing Research Project at GHOST Lab | August 2025 - Ongoing</p>
                         <div class="project-tech">
-                            <span>MATLAB</span>
-                            <span>Python</span>
-                            <span>CAD</span>
-                            <span>Raspberry Pi</span>
-                            <span>MQTT</span>
+                            <span>ROS</span>
+                            <span>C++</span>
+                            <span>Motion Capture</span>
+                            <span>EKF</span>
+                            <span>MPC</span>
                         </div>
                         <ul class="project-achievements">
-                            <li>Developed inverse kinematics solution for 6DOF Stewart Platform</li>
-                            <li>Designed and manufactured using 3D printing</li>
-                            <li>Implemented remote control system using MQTT</li>
+                            <li>Programmed a mobile robot to move based on a nonlinear cost function</li>
+                            <li>Calibrated a motion capture system to detect the real-time position of two rigid bodies</li>
+                            <li>Developed ROS nodes in C++ for real time control of the robot and feedback collection</li>
+                            <li>Used Enhanced Kalman Filters (EKF) to reduce noise in motion capture data</li>
+                            <li>Applied Model Predictive Control (MPC) to control the robot's movement</li>
                         </ul>
                     </div>
                 </div>
@@ -188,17 +203,62 @@
                         <div class="image-placeholder"></div>
                     </div>
                     <div class="project-content">
-                        <h3>PRR Manipulator: Kinematics and Optimization</h3>
-                        <p>Course Project: ME452, Robotics - Comprehensive robotics control system implementation.</p>
+                        <h3>Natural Language Controlled Pick and Place Robot</h3>
+                        <p>Arizona State University | November 2025 - December 2025</p>
                         <div class="project-tech">
-                            <span>MATLAB</span>
-                            <span>Robotics</span>
-                            <span>Control Systems</span>
+                            <span>ROS2</span>
+                            <span>Python</span>
+                            <span>Computer Vision</span>
+                            <span>NLP</span>
                         </div>
                         <ul class="project-achievements">
-                            <li>Implemented forward and inverse kinematics using DH Table</li>
-                            <li>Optimized joint torques using Lagrangian technique</li>
-                            <li>Developed efficient trajectory planning algorithms</li>
+                            <li>Programmed a robot to pick and place different colored and sized blocks based on user's instructions</li>
+                            <li>Created a ROS2 node called orchestrator that delegated tasks to other nodes using ROS2 actions</li>
+                            <li>Stereoscopic 3D perception algorithm to identify size and depth of blocks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Maze Solving Robot</h3>
+                        <p>Arizona State University | September 2025 - October 2025</p>
+                        <div class="project-tech">
+                            <span>OpenCLIP</span>
+                            <span>YOLO</span>
+                            <span>CV2</span>
+                            <span>A* Search</span>
+                            <span>Multi-threading</span>
+                        </div>
+                        <ul class="project-achievements">
+                            <li>Used OpenCLIP VLM as a supervisor agent to trigger the maze-solving pipeline</li>
+                            <li>Leveraged Yolo and CV2 for computer vision and isolate the maze region</li>
+                            <li>Implemented A* search to find the solution to the maze</li>
+                            <li>Enhanced performance using multi-threading to segregate the motion control and maze detection modules</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Design and Control of Throat Swab Sampling Robot</h3>
+                        <p>Final Year Project (Capstone Project) | July 2021 - May 2022</p>
+                        <div class="project-tech">
+                            <span>SOLIDWORKS</span>
+                            <span>MSC Adams</span>
+                            <span>MATLAB</span>
+                            <span>ROS</span>
+                        </div>
+                        <ul class="project-achievements">
+                            <li>Achieved the 3rd position in the industrial open house of 2022 out of 25 competing groups</li>
+                            <li>Designed the robot using SOLID Works and MSC Adams for dynamic analysis</li>
+                            <li>Simulated the inverse kinematic equations for calculating joint angles in MATLAB</li>
+                            <li>Developed ROS nodes for controlling the robot over the network</li>
+                            <li>Tuned the control parameters and sensors to work on the real robot</li>
                         </ul>
                     </div>
                 </div>
@@ -261,7 +321,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Muhammad Ibraheem. All rights reserved.</p>
+            <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
         </div>
     </footer>
 
