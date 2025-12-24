@@ -33,25 +33,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">MI</div>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#academic">Academic</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-full">Ibraheem</span>
+                <span class="logo-short">I</span>
+            </div>
         </div>
-    </nav>
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="#about" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span class="link-text">About</span>
+                </a></li>
+                <li><a href="#academic" class="sidebar-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="link-text">Academic</span>
+                </a></li>
+                <li><a href="#experience" class="sidebar-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="link-text">Experience</span>
+                </a></li>
+                <li><a href="#projects" class="sidebar-link">
+                    <i class="fas fa-code"></i>
+                    <span class="link-text">Projects</span>
+                </a></li>
+                <li><a href="#interests" class="sidebar-link">
+                    <i class="fas fa-heart"></i>
+                    <span class="link-text">Interests</span>
+                </a></li>
+                <li><a href="#contact" class="sidebar-link">
+                    <i class="fas fa-envelope"></i>
+                    <span class="link-text">Contact</span>
+                </a></li>
+            </ul>
+        </nav>
+    </aside>
 
+    <!-- Desktop Toggle Button -->
+    <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- Overlay for mobile backdrop -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content" id="mainContent">
     <section id="about" class="about hero-merged">
         <div class="container">
             <div class="hero-header">
@@ -318,6 +353,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
         <div class="container">
