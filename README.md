@@ -2,6 +2,9 @@
 
 A modern, minimalist portfolio website showcasing my academic background in Robotics and Autonomous Systems.
 
+## Agent guide
+See `AGENTS.md` for a repository map and editing guardrails (useful for AI agents and new contributors).
+
 ## About Me
 I am a Masters Student in Robotics and Autonomous Systems (Systems Engineering) with a passion for technology, hiking, running, and literature.
 
