@@ -10,7 +10,7 @@ A modern, responsive portfolio website showcasing my academic background in Robo
 
 ```
 ├── index.html                          # Homepage landing page
-├── bio.html                            # Dedicated bio page
+├── index.html                          # Bio/home page (root)
 ├── experience.html                     # Dedicated experience page
 ├── contact.html                        # Dedicated contact page
 ├── styles.css                          # Shared minimalist styling for all pages
