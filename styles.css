@@ -420,6 +420,44 @@ select:focus-visible {
     margin: 0;
 }
 
+/* Multi-page Simple Layout */
+.page-hero {
+    padding-top: 6rem;
+    background: var(--section-bg);
+}
+
+.simple-grid-section {
+    background: var(--background);
+}
+
+.simple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.simple-card {
+    background: white;
+    border: 1px solid rgba(42, 42, 114, 0.08);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.simple-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.simple-card p {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.simple-card a {
+    color: var(--primary-color);
+}
+
 /* Sections */
 section {
     padding: 5rem 2rem;
@@ -995,6 +1033,10 @@ footer {
     .project-tech span {
         font-size: 0.8rem;
         padding: 0.2rem 0.6rem;
+    }
+
+    .simple-grid {
+        grid-template-columns: 1fr;
     }
 
     /* Interests Section */

@@ -3,32 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Ibraheem | Robotics & Autonomous Systems</title>
+    <title>Muhammad Ibraheem | Robotics & Software Portfolio</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Muhammad Ibraheem - MS Robotics and Autonomous Systems student at Arizona State University. Experienced in ROS/ROS2, Machine Learning, AI, and robotics systems development.">
-    <meta name="keywords" content="Muhammad Ibraheem, Robotics, ROS, ROS2, Machine Learning, AI, Autonomous Systems, Arizona State University, ASU, GHOST Lab">
+    <meta name="description" content="Muhammad Ibraheem - Robotics and software portfolio with project case studies, experience, and technical background.">
     <meta name="author" content="Muhammad Ibraheem">
-    <link rel="canonical" href="https://ibraheem-111.github.io">
-
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Muhammad Ibraheem | Robotics & Autonomous Systems">
-    <meta property="og:description" content="MS Robotics student at ASU specializing in autonomous systems, ROS/ROS2, and AI. Research experience at GHOST Lab.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ibraheem-111.github.io">
-    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Muhammad Ibraheem | Robotics & Autonomous Systems">
-    <meta name="twitter:description" content="MS Robotics student at ASU specializing in autonomous systems, ROS/ROS2, and AI.">
-    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
-
-    <!-- Robots & SEO -->
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#2a2a72">
+    <link rel="canonical" href="https://ibraheem-111.github.io/">
 
-    <!-- JSON-LD Structured Data -->
+    <meta property="og:title" content="Muhammad Ibraheem | Robotics & Software Portfolio">
+    <meta property="og:description" content="Explore project case studies, engineering experience, and current robotics work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ibraheem-111.github.io/">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Ibraheem | Robotics & Software Portfolio">
+    <meta name="twitter:description" content="Project case studies and engineering experience in robotics and software.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -44,24 +37,18 @@
         "location": {
             "@type": "Place",
             "name": "Tempe, Arizona, USA"
-        },
-        "description": "Masters student in Robotics and Autonomous Systems at Arizona State University with expertise in ROS/ROS2, Machine Learning, and autonomous systems development."
+        }
     }
     </script>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
-    <link rel="mask-icon" href="/favicon.svg" color="#2a2a72">
-
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Skip to Content Link -->
     <a href="#mainContent" class="skip-to-content">Skip to main content</a>
 
-    <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
         <div class="sidebar-header">
             <div class="logo">
@@ -71,353 +58,74 @@
         </div>
         <nav class="sidebar-nav">
             <ul class="sidebar-links">
-                <li><a href="#projects" class="sidebar-link" data-primary-nav="projects">
-                    <i class="fas fa-code"></i>
-                    <span class="link-text">Projects</span>
-                </a></li>
-                <li><a href="#about" class="sidebar-link" data-primary-nav="bio">
-                    <i class="fas fa-user"></i>
-                    <span class="link-text">Bio</span>
-                </a></li>
-                <li><a href="#academic" class="sidebar-link">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="link-text">Academic</span>
-                </a></li>
-                <li><a href="#experience" class="sidebar-link">
-                    <i class="fas fa-briefcase"></i>
-                    <span class="link-text">Experience</span>
-                </a></li>
-                <li><a href="#interests" class="sidebar-link">
-                    <i class="fas fa-heart"></i>
-                    <span class="link-text">Interests</span>
-                </a></li>
-                <li><a href="#contact" class="sidebar-link">
-                    <i class="fas fa-envelope"></i>
-                    <span class="link-text">Contact</span>
-                </a></li>
+                <li><a href="/" class="sidebar-link" aria-current="page"><i class="fas fa-home"></i><span class="link-text">Home</span></a></li>
+                <li><a href="/bio.html" class="sidebar-link"><i class="fas fa-user"></i><span class="link-text">Bio</span></a></li>
+                <li><a href="/experience.html" class="sidebar-link"><i class="fas fa-briefcase"></i><span class="link-text">Experience</span></a></li>
+                <li><a href="/projects/" class="sidebar-link"><i class="fas fa-code"></i><span class="link-text">Projects</span></a></li>
+                <li><a href="/contact.html" class="sidebar-link"><i class="fas fa-envelope"></i><span class="link-text">Contact</span></a></li>
             </ul>
         </nav>
     </aside>
 
-    <!-- Desktop Toggle Button -->
     <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
         <i class="fas fa-chevron-left"></i>
     </button>
 
-    <!-- Mobile Toggle Button -->
     <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
 
-    <!-- Overlay for mobile backdrop -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <main class="main-content" id="mainContent">
-    <section id="about" class="about hero-merged">
-        <div class="container">
-            <div class="hero-header">
+        <section class="page-hero">
+            <div class="container">
                 <h1>Muhammad Ibraheem</h1>
-                <p class="subtitle">Masters Student in Robotics & Autonomous Systems</p>
+                <p class="subtitle">Robotics and Software Engineer | MS Robotics at ASU</p>
                 <div class="hero-cta">
-                    <a href="/resume.pdf" download class="btn btn-outline" aria-label="Download Resume PDF">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-                <div class="section-switch" aria-label="Primary homepage sections">
-                    <a href="#projects" class="section-switch-link is-active" data-switch-target="projects">Projects</a>
-                    <a href="#about" class="section-switch-link" data-switch-target="bio">Bio</a>
+                    <a href="/projects/" class="btn btn-primary">View Projects</a>
+                    <a href="/resume.pdf" download class="btn btn-outline">Download Resume</a>
                 </div>
             </div>
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a Masters student in Robotics and Autonomous Systems at Arizona State University, with a strong foundation in mechanical engineering and data science. My expertise spans across robotics, machine learning, and software development, with hands-on experience in developing AI solutions and robotic systems.</p>
-                    <div class="skills-section">
-                        <h3>Technical Skills</h3>
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h4>Robotics & AI</h4>
-                                <div class="skill-tags">
-                                    <span>ROS/ROS2</span>
-                                    <span>Gazebo</span>
-                                    <span>Pytorch</span>
-                                    <span>SLAM</span>
-                                    <span>Reinforcement Learning</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Programming</h4>
-                                <div class="skill-tags">
-                                    <span>Python</span>
-                                    <span>CUDA</span>
-                                    <span>C++</span>
-                                    <span>SQL</span>
-                                    <span>Linux</span>
-                                    <span>Docker</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Engineering Tools</h4>
-                                <div class="skill-tags">
-                                    <span>SOLIDWORKS</span>
-                                    <span>Creo</span>
-                                    <span>ANSYS</span>
-                                    <span>MSC Adams</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="/ibraheem.jpg" alt="Muhammad Ibraheem, MS Robotics student at Arizona State University" class="profile-image">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="academic" class="academic">
-        <div class="container">
-            <h2>Academic Background</h2>
-            <div class="academic-content">
-                <div class="academic-item">
-                    <h3>MS Robotics and Autonomous Systems</h3>
-                    <p>Systems Engineering Focus</p>
-                    <div class="academic-details">
-                        <span class="institution">Arizona State University</span>
-                        <span class="year">August 2025 - May 2027</span>
-                        <span class="location">Tempe, AZ</span>
-                    </div>
-                    <p class="academic-achievement">GPA: 3.89</p>
-                </div>
-                <div class="academic-item">
-                    <h3>Bachelor of Science in Mechanical Engineering</h3>
-                    <div class="academic-details">
-                        <span class="institution">Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI)</span>
-                        <span class="year">August 2018 - February 2023</span>
-                        <span class="location">Topi, Pakistan</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-date">December 2023 - July 2025</div>
-                    <div class="experience-content">
-                        <h3>Data Scientist</h3>
-                        <h4>Tkxel (Software and AI Consultancy) - Lahore, Pakistan</h4>
-                        <p>Helped clients improve productivity and solve business problems using ML and AI.</p>
-                        <ul class="experience-achievements">
-                            <li>Trained a Neural Network in Pytorch that estimated software engineering effort with a 15% error</li>
-                            <li>Used Bayesian Inference with LLMs to audit cybersecurity compliance records of corporations</li>
-                            <li>Developed an AI diagram generator that reduced solution diagram generation time by 50%</li>
-                            <li>Built a multi agent organizational AI Assistant with document level authorization built-in</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-date">February 2023 - December 2023</div>
-                    <div class="experience-content">
-                        <h3>Associate Software Engineer</h3>
-                        <h4>Maqsood Labs - Lahore, Pakistan</h4>
-                        <p>Developed innovative solutions for machine learning and drone control systems.</p>
-                        <ul class="experience-achievements">
-                            <li>Built a production ML pipeline for clustering news items</li>
-                            <li>Created a Flask server using pymavlink to control drone swarms of up to 254 drones</li>
-                        </ul>
-                    </div>
+        <section class="simple-grid-section">
+            <div class="container">
+                <h2>Navigate</h2>
+                <div class="simple-grid">
+                    <article class="simple-card">
+                        <h3>Bio</h3>
+                        <p>Education, technical strengths, and current focus areas in robotics and controls.</p>
+                        <a href="/bio.html" class="btn btn-small">Open Bio</a>
+                    </article>
+                    <article class="simple-card">
+                        <h3>Experience</h3>
+                        <p>Professional work in AI consulting, applied ML systems, and robotics research.</p>
+                        <a href="/experience.html" class="btn btn-small">Open Experience</a>
+                    </article>
+                    <article class="simple-card">
+                        <h3>Projects</h3>
+                        <p>Case studies with architecture, decisions, and measurable outcomes.</p>
+                        <a href="/projects/" class="btn btn-small">Open Projects</a>
+                    </article>
+                    <article class="simple-card">
+                        <h3>Contact</h3>
+                        <p>Email, LinkedIn, and GitHub links for hiring and collaboration conversations.</p>
+                        <a href="/contact.html" class="btn btn-small">Open Contact</a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Nonlinear Peer-Aware Cost Estimation</h3>
-                        <p>Ongoing Research Project at GHOST Lab | August 2025 - Ongoing</p>
-                        <div class="project-tech">
-                            <span>ROS</span>
-                            <span>C++</span>
-                            <span>Motion Capture</span>
-                            <span>EKF</span>
-                            <span>MPC</span>
-                        </div>
-                        <ul class="project-achievements">
-                            <li>Programmed a mobile robot to move based on a nonlinear cost function</li>
-                            <li>Calibrated a motion capture system to detect the real-time position of two rigid bodies</li>
-                            <li>Developed ROS nodes in C++ for real time control of the robot and feedback collection</li>
-                            <li>Used Enhanced Kalman Filters (EKF) to reduce noise in motion capture data</li>
-                            <li>Applied Model Predictive Control (MPC) to control the robot's movement</li>
-                            <li>Incorporated Bayesian intent inference to enable belief-aware decision making in multi-agent navigation</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="/projects/nonlinear-peer-aware-cost-estimation.html" class="btn btn-small">Case Study</a>
-                            <!-- TODO: Add project GitHub repository URL -->
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Natural Language Controlled Pick and Place Robot</h3>
-                        <p>Arizona State University | November 2025 - December 2025</p>
-                        <div class="project-tech">
-                            <span>ROS2</span>
-                            <span>Python</span>
-                            <span>Computer Vision</span>
-                            <span>NLP</span>
-                        </div>
-                        <ul class="project-achievements">
-                            <li>Programmed a robot to pick and place different colored and sized blocks based on user's instructions</li>
-                            <li>Created a ROS2 node called orchestrator that delegated tasks to other nodes using ROS2 actions</li>
-                            <li>Stereoscopic 3D perception algorithm to identify size and depth of blocks</li>
-                            <li>Implemented node-level retries and feedback checks to recover from failed grasp/place attempts</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="/projects/nl-pick-and-place.html" class="btn btn-small">Case Study</a>
-                            <!-- TODO: Add project GitHub repository URL -->
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Maze Solving Robot</h3>
-                        <p>Arizona State University | September 2025 - October 2025</p>
-                        <div class="project-tech">
-                            <span>OpenCLIP</span>
-                            <span>YOLO</span>
-                            <span>CV2</span>
-                            <span>A* Search</span>
-                            <span>Multi-threading</span>
-                        </div>
-                        <ul class="project-achievements">
-                            <li>Used OpenCLIP VLM as a supervisor agent to trigger the maze-solving pipeline</li>
-                            <li>Leveraged Yolo and CV2 for computer vision and isolate the maze region</li>
-                            <li>Implemented A* search to find the solution to the maze</li>
-                            <li>Enhanced performance using multi-threading to segregate the motion control and maze detection modules</li>
-                        </ul>
-                        <div class="project-links">
-                            <!-- TODO: Add project GitHub repository URL -->
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Design and Control of Throat Swab Sampling Robot</h3>
-                        <p>Final Year Project (Capstone Project) | July 2021 - May 2022</p>
-                        <div class="project-tech">
-                            <span>SOLIDWORKS</span>
-                            <span>MSC Adams</span>
-                            <span>MATLAB</span>
-                            <span>ROS</span>
-                        </div>
-                        <ul class="project-achievements">
-                            <li>Achieved the 3rd position in the industrial open house of 2022 out of 25 competing groups</li>
-                            <li>Designed the robot using SOLID Works and MSC Adams for dynamic analysis</li>
-                            <li>Simulated the inverse kinematic equations for calculating joint angles in MATLAB</li>
-                            <li>Used the Jacobian matrix to calculate required joint torques for the manipulator</li>
-                            <li>Developed ROS nodes for controlling the robot over the network</li>
-                            <li>Deployed ROS control nodes on a Raspberry Pi and tuned parameters directly on hardware</li>
-                        </ul>
-                        <div class="project-links">
-                            <!-- TODO: Add project GitHub repository URL -->
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
-                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="interests" class="interests">
-        <div class="container">
-            <h2>Interests & Hobbies</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <i class="fas fa-mountain"></i>
-                    <h3>Hiking</h3>
-                    <p>I love a challenging hike, and especially the amazing views at the end.</p>
-                </div>
-                <div class="interest-card">
-                    <i class="fas fa-running"></i>
-                    <h3>Running</h3>
-                    <p>I can run a decent 10k, working towards a half marathon</p>
-                </div>
-                <div class="interest-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Literature</h3>
-                    <p>I like reading about world history, novels and short stories</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:ibraheemsal@outlook.com">ibraheemsal@outlook.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:5853099506">(628) 235-4308</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Tempe, Arizona, USA</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/ibraheem-111" target="_blank">GitHub Profile</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/muhammad-ibraheem-abb066152/" target="_blank">LinkedIn Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
+            <p>&copy; 2026 Muhammad Ibraheem. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="/script.js"></script>
 </body>
-</html> 
+</html>

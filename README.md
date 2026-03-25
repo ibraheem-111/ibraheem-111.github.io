@@ -9,7 +9,10 @@ A modern, responsive portfolio website showcasing my academic background in Robo
 ## 📁 Site Structure
 
 ```
-├── index.html                          # Homepage with hero, about, experience, projects, interests
+├── index.html                          # Homepage landing page
+├── bio.html                            # Dedicated bio page
+├── experience.html                     # Dedicated experience page
+├── contact.html                        # Dedicated contact page
 ├── styles.css                          # Single CSS file (1000+ lines), responsive design with accessibility
 ├── script.js                           # Client-side navigation, sidebar toggles, smooth scrolling
 ├── resume.pdf                          # Stable URL for resume download
@@ -20,13 +23,14 @@ A modern, responsive portfolio website showcasing my academic background in Robo
 └── projects/                           # Project case studies and documentation
     ├── index.html                      # Project listing page with all projects
     ├── nonlinear-peer-aware-cost-estimation.html  # Case study 1: Mobile robotics research
-    └── nl-pick-and-place.html          # Case study 2: NLP-controlled robot arm
+    ├── nl-pick-and-place.html          # Case study 2: NLP-controlled robot arm
+    └── quadruped-rl-2dof-spine.html    # Case study 3: one-month RL challenge
 ```
 
 ## ✨ Key Features
 
 ### 1. **Multi-Page Architecture**
-- Homepage with full portfolio sections (about, academic, experience, projects, interests, contact)
+- Clear multi-page structure with dedicated pages for Bio, Experience, Projects, and Contact
 - Dedicated `/projects/` section with detailed case studies for showcase projects
 - Cross-page navigation with consistent sidebar and styling
 
@@ -67,7 +71,7 @@ Each project case study includes:
 cd /path/to/ibraheem-111.github.io
 
 # Option 1: Python HTTP server
-python -m http.server 8000
+python3 -m http.server 8000
 
 # Option 2: Use any other local server
 # (Live Server VS Code extension, Node http-server, etc.)

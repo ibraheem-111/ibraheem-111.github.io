@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadruped RL with 2-DoF Spine | Case Study | Muhammad Ibraheem</title>
+
+    <meta name="description" content="Case study: Quadruped RL with 2-DoF Spine - a one-month challenge modifying a Unitree Go2 and training RL control for tight cornering.">
+    <meta name="keywords" content="Quadruped Robot, Reinforcement Learning, Unitree Go2, Isaac Sim, Robotics Control">
+    <meta name="author" content="Muhammad Ibraheem">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#2a2a72">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/quadruped-rl-2dof-spine.html">
+
+    <meta property="og:title" content="Quadruped RL with 2-DoF Spine | Case Study">
+    <meta property="og:description" content="One-month robotics challenge: modified Unitree Go2 and trained RL policy for narrow-hallway cornering.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/quadruped-rl-2dof-spine.html">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quadruped RL with 2-DoF Spine | Case Study">
+    <meta name="twitter:description" content="Unitree Go2 spine modification and RL policy training in Isaac Sim.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ibraheem",
+        "jobTitle": "MS Robotics and Autonomous Systems Student",
+        "url": "https://ibraheem-111.github.io",
+        "image": "https://ibraheem-111.github.io/ibraheem.jpg",
+        "sameAs": [
+            "https://github.com/ibraheem-111",
+            "https://www.linkedin.com/in/muhammad-ibraheem-abb066152/"
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .case-study-content {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study-section {
+            margin: 2rem 0;
+        }
+
+        .case-study-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.25rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        .case-study-section ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+        }
+
+        .case-study-section li {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .breadcrumb {
+            color: var(--light-text);
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-full">Ibraheem</span>
+                <span class="logo-short">I</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="/" class="sidebar-link"><i class="fas fa-home"></i><span class="link-text">Home</span></a></li>
+                <li><a href="/bio.html" class="sidebar-link"><i class="fas fa-user"></i><span class="link-text">Bio</span></a></li>
+                <li><a href="/experience.html" class="sidebar-link"><i class="fas fa-briefcase"></i><span class="link-text">Experience</span></a></li>
+                <li><a href="/projects/" class="sidebar-link" aria-current="page"><i class="fas fa-code"></i><span class="link-text">Projects</span></a></li>
+                <li><a href="/contact.html" class="sidebar-link"><i class="fas fa-envelope"></i><span class="link-text">Contact</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar"><i class="fas fa-chevron-left"></i></button>
+    <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content" id="mainContent">
+        <section class="case-study-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="/">Home</a> / <a href="/projects/">Projects</a> / Quadruped RL with 2-DoF Spine</p>
+                <h1>Quadruped RL with 2-DoF Spine</h1>
+                <p class="subtitle">Current one-month challenge: hardware modification + RL control for tight cornering</p>
+                <p class="project-meta"><i class="fas fa-calendar"></i> February 2026 - Present | <i class="fas fa-map-marker-alt"></i> Tempe, AZ</p>
+            </div>
+        </section>
+
+        <section class="case-study-content">
+            <div class="container">
+                <div class="case-study-section">
+                    <h3>What I built</h3>
+                    <ul>
+                        <li>Modified a Unitree Go2 by introducing a 2-joint spine mechanism.</li>
+                        <li>Developed an RL policy for navigating tight corners in a narrow hallway setup.</li>
+                        <li>Designed action and observation spaces using IMU, joint states, and relative obstacle/goal pose.</li>
+                        <li>Trained and iterated policies in Isaac Sim while tuning environment dynamics and constraints.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3>System architecture</h3>
+                    <div class="architecture-diagram">
+<pre>
+Policy Training Loop
+
+Isaac Sim Environment
+  -> Sensor Pipeline (IMU + joint states + relative pose)
+  -> Observation Vector Construction
+  -> RL Policy (actor/critic)
+  -> Action Commands to Quadruped Controller
+  -> Reward + Constraints (cornering stability, progress, collisions)
+  -> Logging and Evaluation
+</pre>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h3>Key engineering decisions</h3>
+                    <ul>
+                        <li>Chose a short, challenge-focused scope to iterate quickly on policy design and reward shaping.</li>
+                        <li>Used simulation-first training in Isaac Sim to accelerate experiments before hardware-heavy validation.</li>
+                        <li>Included relative obstacle/goal pose in observations to improve behavior around tight turns.</li>
+                        <li>Balanced agility and stability by tuning rewards for progress, smoothness, and failure penalties.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3>Results (in progress)</h3>
+                    <ul>
+                        <li>Baseline policy can complete hallway turns in simulation without collision under nominal settings.</li>
+                        <li>Current focus: robustness against dynamics variation and tighter corner radii.</li>
+                        <li>TODO: add final challenge metrics (success rate, average episode return, corner completion time).</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3>Links</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/ibraheem-111/quadruped-spine-link" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        <!-- TODO: Add demo video URL -->
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="TODO: Add demo video URL"><i class="fas fa-video"></i> Demo</a>
+                    </div>
+                </div>
+
+                <div class="nav-links">
+                    <a href="/projects/" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2026 Muhammad Ibraheem. All rights reserved.</p></div></footer>
+    <script src="/script.js"></script>
+</body>
+</html>

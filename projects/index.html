@@ -73,15 +73,19 @@
                     <i class="fas fa-home"></i>
                     <span class="link-text">Home</span>
                 </a></li>
+                <li><a href="/bio.html" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span class="link-text">Bio</span>
+                </a></li>
+                <li><a href="/experience.html" class="sidebar-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="link-text">Experience</span>
+                </a></li>
                 <li><a href="/projects/" class="sidebar-link" aria-current="page">
                     <i class="fas fa-code"></i>
                     <span class="link-text">Projects</span>
                 </a></li>
-                <li><a href="/#about" class="sidebar-link">
-                    <i class="fas fa-user"></i>
-                    <span class="link-text">About</span>
-                </a></li>
-                <li><a href="/#contact" class="sidebar-link">
+                <li><a href="/contact.html" class="sidebar-link">
                     <i class="fas fa-envelope"></i>
                     <span class="link-text">Contact</span>
                 </a></li>
@@ -117,6 +121,31 @@
             <div class="container">
                 <h2>Featured Projects</h2>
                 <div class="projects-grid">
+                    <!-- Project 1: Quadruped RL with 2-DoF Spine -->
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Quadruped RL with 2-DoF Spine</h3>
+                            <p class="project-date">February 2026 - Present</p>
+                            <p class="project-summary">One-month challenge project: modified a Unitree Go2 with a 2-joint spine and trained an RL policy for tight-corner navigation in narrow hallways.</p>
+                            <div class="project-tech">
+                                <span>Reinforcement Learning</span>
+                                <span>Isaac Sim</span>
+                                <span>Python</span>
+                                <span>Robot Dynamics</span>
+                                <span>IMU</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="/projects/quadruped-rl-2dof-spine.html" class="btn btn-primary">View Case Study</a>
+                                <a href="https://github.com/ibraheem-111/quadruped-spine-link" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <!-- TODO: Add demo video URL -->
+                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Project 1: Nonlinear Peer-Aware Cost Estimation -->
                     <div class="project-card featured">
                         <div class="project-image">
@@ -219,7 +248,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
-            <p><a href="/">Home</a> | <a href="/projects/">Projects</a> | <a href="/resume.pdf">Resume</a></p>
+            <p><a href="/">Home</a> | <a href="/bio.html">Bio</a> | <a href="/experience.html">Experience</a> | <a href="/projects/">Projects</a> | <a href="/contact.html">Contact</a> | <a href="/resume.pdf">Resume</a></p>
         </div>
     </footer>
 
