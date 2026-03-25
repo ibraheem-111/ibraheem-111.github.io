@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Muhammad Ibraheem</title>
+    <meta name="description" content="Robotics projects by Muhammad Ibraheem with direct links to case studies and GitHub.">
+    <meta name="author" content="Muhammad Ibraheem">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/">
+    <meta property="og:title" content="Projects | Muhammad Ibraheem">
+    <meta property="og:description" content="Direct overview of robotics projects with case studies and GitHub links.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem-coit-tower.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects | Muhammad Ibraheem">
+    <meta name="twitter:description" content="Direct overview of robotics projects with case studies and GitHub links.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem-coit-tower.jpeg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- GoatCounter Analytics -->
+    <script data-goatcounter="https://ibraheem-111.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+    <div class="layout">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a href="/">~/ibraheem</a>
+            <a href="/">bio</a>
+            <a href="/projects/" aria-current="page">projects</a>
+            <a href="/experience.html">experience</a>
+            <a href="/contact.html">contact</a>
+        </nav>
+
+        <main id="mainContent">
+            <h1>Projects</h1>
+            <p class="lead">Overview of my academic and personal projects.</p>
+
+            <div class="block"><span class="prompt">$</span>ls ./projects --sort=time</div>
+
+            <section class="project" aria-labelledby="quadruped-title">
+                <h2 id="quadruped-title">Quadruped RL with 2-DoF Spine</h2>
+                <p class="meta">Feb 2026 - Present | Personal month-long challenge | Tempe, AZ</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">01</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">Modified a Unitree Go2 with a 2-joint spine and trained an RL policy for tight-corner navigation in narrow hallways. Designed observation/action spaces using IMU, joint states, and relative obstacle-goal pose. Training done in Isaac Sim with iterative dynamics constraints.</p>
+                    <p class="tags">tech: Reinforcement Learning, Isaac Sim, Python, Robot Dynamics, IMU</p>
+                    <ul class="list">
+                        <li>Trained a locomotion policy for a Unitree Go2 quadruped under challenging terrain conditions.</li>
+                        <li>Designed observation and action spaces using IMU, joint states, and relative obstacle-goal pose.</li>
+                        <li>Iteratively tuned rewards and simulation constraints for robust tight-corner and hallway navigation.</li>
+                    </ul>
+                    <p class="links">
+                        <span class="disabled">case-study (on hold)</span>
+                        <a href="https://github.com/ibraheem-111/quadruped-spine-link" target="_blank" rel="noopener noreferrer">github</a>
+                        <span class="disabled">demo (todo)</span>
+                    </p>
+                </details>
+            </section>
+
+            <section class="project" aria-labelledby="nonlinear-title">
+                <h2 id="nonlinear-title">Nonlinear Peer-Aware Cost Estimation</h2>
+                <p class="meta">Aug 2025 - Ongoing | GHOST Lab, ASU</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">02</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">Mobile robot navigation using a nonlinear cost function with motion-capture calibration, EKF filtering, and model predictive control.</p>
+                    <p class="desc">IJRR manuscript submission is currently in progress for this project.</p>
+                    <p class="tags">tech: ROS, C++, Motion Capture, EKF, MPC</p>
+                    <ul class="list">
+                        <li>Programmed a mobile robot to move based on a nonlinear peer-aware cost function.</li>
+                        <li>Calibrated motion capture to estimate real-time positions of rigid bodies.</li>
+                        <li>Developed ROS nodes in C++ for real-time control and feedback collection.</li>
+                        <li>Used Extended Kalman Filter to reduce motion-capture noise.</li>
+                        <li>Applied Model Predictive Control for trajectory planning and robot motion control.</li>
+                        <li>Integrated Bayesian intent inference for belief-aware decision making.</li>
+                    </ul>
+                    <p class="links">
+                        <span class="disabled">case-study (on hold)</span>
+                        <a href="https://github.com/YousefSoltanian/intent_comm_ros2_ws/tree/main/src" target="_blank" rel="noopener noreferrer">github</a>
+                        <span class="disabled">demo (todo)</span>
+                    </p>
+                </details>
+            </section>
+
+            <section class="project" aria-labelledby="nlpp-title">
+                <h2 id="nlpp-title">Natural Language Controlled Pick and Place Robot</h2>
+                <p class="meta">Nov 2025 - Dec 2025 | Arizona State University</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">03</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">Built a robot system that maps user language commands into pick/place actions using ROS2 orchestration and 3D perception.</p>
+                    <p class="tags">tech: ROS2, Python, Computer Vision, NLP</p>
+                    <ul class="list">
+                        <li>Programmed a robot to pick and place colored and sized blocks based on user instructions.</li>
+                        <li>Created a ROS2 orchestrator node to delegate tasks using ROS2 actions.</li>
+                        <li>Implemented stereo perception for object size, color, and depth estimation.</li>
+                        <li>Added retry and verification loops for failed manipulations.</li>
+                    </ul>
+                    <p class="links">
+                        <span class="disabled">case-study (on hold)</span>
+                        <a href="https://github.com/ibraheem-111/ras545-final" target="_blank" rel="noopener noreferrer">github</a>
+                        <a href="https://youtu.be/O5aPdSGbs1w" target="_blank" rel="noopener noreferrer">demo</a>
+                    </p>
+                </details>
+            </section>
+
+            <section class="project" aria-labelledby="lqr-title">
+                <h2 id="lqr-title">LQR Control for Motor Position Control</h2>
+                <p class="meta">Nov 2025 - Nov 2025 | Arizona State University | Tempe, AZ</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">04</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">Built and evaluated LQR-based controllers for motor position control and disturbance-robust cart-pole stabilization.</p>
+                    <p class="tags">tech: SIMULINK, Arduino, ROS2, Gazebo, LQR, State Feedback, IIR Filtering</p>
+                    <ul class="list">
+                        <li>Built an LQR position controller in SIMULINK and ported it to Arduino.</li>
+                        <li>Implemented state-feedback control with IIR velocity filtering to reject encoder noise.</li>
+                        <li>Developed and analyzed an LQR cart-pole controller in ROS2 and Gazebo under stochastic earthquake disturbances, tuning Q and R matrices to balance stability and control effort.</li>
+                        <li>Evaluated system performance using pole angle deviation, cart displacement, and control effort metrics.</li>
+                    </ul>
+                    <p class="links">
+                        <span class="disabled">case-study (on hold)</span>
+                        <span class="disabled">github (todo)</span>
+                        <span class="disabled">demo (todo)</span>
+                    </p>
+                </details>
+            </section>
+
+            <section class="project" aria-labelledby="maze-title">
+                <h2 id="maze-title">Maze Solving Robot</h2>
+                <p class="meta">Sep 2025 - Oct 2025 | Arizona State University</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">05</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">Vision-based maze solving with VLM supervision and A* search for pathfinding.</p>
+                    <p class="tags">tech: OpenCLIP, YOLO, CV2, A* Search</p>
+                    <ul class="list">
+                        <li>Used OpenCLIP VLM as a supervisor agent to trigger the maze-solving pipeline.</li>
+                        <li>Leveraged YOLO and CV2 for computer vision to isolate the maze region.</li>
+                        <li>Implemented A* search to find maze solutions.</li>
+                        <li>Used multithreading to separate motion control and maze detection modules.</li>
+                    </ul>
+                    <p class="links">
+                        <span class="disabled">github (todo)</span>
+                        <a href="https://www.linkedin.com/posts/muhammad-ibraheem-robotics_a-few-weeks-ago-i-programmed-this-robot-ugcPost-7403331270530965504-ETrW?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSr9K8B1elJvjcX5cQr2xw1U8Rp2z8egsg" target="_blank" rel="noopener noreferrer">demo</a>
+                    </p>
+                </details>
+            </section>
+
+            <section class="project" aria-labelledby="swab-title">
+                <h2 id="swab-title">Design and Control of Throat Swab Sampling Robot</h2>
+                <p class="meta">Jul 2021 - May 2022 | Capstone Project</p>
+                <details class="project-details project-toggle">
+                    <summary>
+                        <span class="toggle-num">06</span>
+                        <span class="toggle-title">show project details</span>
+                        <span class="toggle-meta">expand</span>
+                    </summary>
+                    <p class="desc">6-DOF robotic system from CAD and dynamic analysis to inverse kinematics and ROS-based network control. Placed 3rd out of 25 teams.</p>
+                    <p class="tags">tech: SOLIDWORKS, MSC Adams, MATLAB, ROS</p>
+                    <ul class="list">
+                        <li>Achieved 3rd position in the 2022 industrial open house out of 25 competing groups.</li>
+                        <li>Designed the robot using SOLIDWORKS and MSC Adams for dynamic analysis.</li>
+                        <li>Simulated inverse kinematic equations for joint-angle calculation in MATLAB.</li>
+                        <li>Developed ROS nodes for controlling the robot over the network.</li>
+                        <li>Tuned control parameters and sensors for real-robot operation.</li>
+                    </ul>
+                    <p class="links">
+                        <a href="https://github.com/ibraheem-111/Design-and-Control-of-Throat-Swab-Sampling-Robot" target="_blank" rel="noopener noreferrer">github</a>
+                        <span class="disabled">demo (todo)</span>
+                    </p>
+                </details>
+            </section>
+        </main>
+
+        <footer>
+            <div><span class="prompt">$</span>echo "© 2026 Muhammad Ibraheem"</div>
+        </footer>
+    </div>
+</body>
+</html>

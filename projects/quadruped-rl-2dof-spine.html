@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadruped RL with 2-DoF Spine | Case Study</title>
+    <meta name="description" content="Case study: month-long quadruped RL challenge with Unitree Go2 spine modification.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Quadruped RL with 2-DoF Spine | Case Study">
+    <meta property="og:description" content="Unitree Go2 2-joint spine modification and RL training in Isaac Sim.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/quadruped-rl-2dof-spine.html">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem-coit-tower.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quadruped RL with 2-DoF Spine | Case Study">
+    <meta name="twitter:description" content="Month-long challenge with spine modification and RL control.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem-coit-tower.jpeg">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/quadruped-rl-2dof-spine.html">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- GoatCounter Analytics -->
+    <script data-goatcounter="https://ibraheem-111.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+    <div class="layout">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a href="/">~/ibraheem</a>
+            <a href="/">bio</a>
+            <a href="/projects/" aria-current="page">projects</a>
+            <a href="/experience.html">experience</a>
+            <a href="/contact.html">contact</a>
+        </nav>
+
+        <main id="mainContent">
+            <h1>Quadruped RL with 2-DoF Spine</h1>
+            <p class="lead">Current month-long challenge: hardware modification plus reinforcement learning control.</p>
+
+            <div class="block"><span class="prompt">$</span>cat case-study.md</div>
+
+            <section class="entry">
+                <h2>Summary</h2>
+                <p class="meta">Feb 2026 - Present | Personal challenge | Tempe, AZ</p>
+                <p class="desc">Modified a Unitree Go2 by introducing a 2-joint spine and trained an RL policy for narrow-hallway, tight-corner navigation.</p>
+            </section>
+
+            <section class="entry">
+                <h2>What I built</h2>
+                <ul class="list">
+                    <li>Mechanical change to add 2-DoF spine behavior.</li>
+                    <li>Policy training loop in Isaac Sim.</li>
+                    <li>Observation and action design using IMU + joint states + relative obstacle/goal pose.</li>
+                    <li>Iterative environment and reward tuning for robust cornering.</li>
+                </ul>
+            </section>
+
+            <section class="entry">
+                <h2>Current status</h2>
+                <ul class="list">
+                    <li>Policy can complete hallway turns in nominal simulation conditions.</li>
+                    <li>Current focus is robustness under dynamics variation.</li>
+                    <li>Final challenge metrics to be added after completion.</li>
+                </ul>
+                <p class="links">
+                    <a href="https://github.com/ibraheem-111/quadruped-spine-link" target="_blank" rel="noopener noreferrer">github</a>
+                    <a href="/projects/">back-to-projects</a>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div><span class="prompt">$</span>echo "© 2026 Muhammad Ibraheem"</div>
+        </footer>
+    </div>
+</body>
+</html>
