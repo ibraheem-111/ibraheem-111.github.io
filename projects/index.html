@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Muhammad Ibraheem | Robotics & Autonomous Systems</title>
+    <title>Projects | Muhammad Ibraheem</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of robotics and autonomous systems projects by Muhammad Ibraheem. Includes ROS/ROS2, machine learning, computer vision, and control system implementations.">
-    <meta name="keywords" content="Robotics Projects, ROS, ROS2, Autonomous Systems, Machine Learning, Computer Vision, Muhammad Ibraheem">
+    <meta name="description" content="Robotics projects by Muhammad Ibraheem with direct links to case studies and GitHub.">
     <meta name="author" content="Muhammad Ibraheem">
+    <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://ibraheem-111.github.io/projects/">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Projects | Muhammad Ibraheem | Robotics & Autonomous Systems">
-    <meta property="og:description" content="Detailed case studies and technical documentation of robotics and autonomous systems projects.">
+    <meta property="og:title" content="Projects | Muhammad Ibraheem">
+    <meta property="og:description" content="Direct overview of robotics projects with case studies and GitHub links.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ibraheem-111.github.io/projects/">
     <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
 
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Projects | Muhammad Ibraheem">
-    <meta name="twitter:description" content="Robotics and autonomous systems project portfolio.">
+    <meta name="twitter:description" content="Direct overview of robotics projects with case studies and GitHub links.">
     <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
 
-    <!-- Robots & SEO -->
-    <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#2a2a72">
-
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,194 +40,237 @@
     }
     </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="alternate icon" href="/favicon.ico">
+    <style>
+        :root {
+            --bg: #f4f1e6;
+            --panel: #f8f6ee;
+            --text: #27343b;
+            --muted: #5f6f78;
+            --link: #1a4f7a;
+            --border: #d8d2c2;
+        }
 
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", Courier, monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+            font-size: 15px;
+        }
+
+        .layout {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 14px 28px;
+        }
+
+        .top-nav {
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .top-nav a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .top-nav a:hover,
+        .top-nav a:focus-visible {
+            text-decoration: underline;
+        }
+
+        .top-nav a[aria-current="page"] {
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .prompt {
+            color: var(--link);
+            margin-right: 8px;
+        }
+
+        h1 {
+            margin: 20px 0 8px;
+            font-size: 38px;
+            line-height: 1.2;
+            color: #202a2f;
+        }
+
+        .lead {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        .block {
+            margin: 18px 0;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            padding: 12px;
+        }
+
+        .project {
+            margin: 16px 0 22px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .project:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project h2 {
+            margin: 0 0 4px;
+            font-size: 21px;
+        }
+
+        .meta {
+            margin: 0 0 8px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .desc {
+            margin: 0 0 8px;
+        }
+
+        .tags {
+            margin: 6px 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .links {
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        .links a {
+            color: var(--link);
+            margin-right: 14px;
+        }
+
+        .links .disabled {
+            color: #8a9095;
+            text-decoration: none;
+            cursor: default;
+            margin-right: 14px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 18px;
+            padding-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .layout {
+                padding: 0 10px 24px;
+            }
+
+            .top-nav {
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to Content Link -->
-    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
-
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
-        <div class="sidebar-header">
-            <div class="logo">
-                <span class="logo-full">Ibraheem</span>
-                <span class="logo-short">I</span>
-            </div>
-        </div>
-        <nav class="sidebar-nav">
-            <ul class="sidebar-links">
-                <li><a href="/" class="sidebar-link">
-                    <i class="fas fa-home"></i>
-                    <span class="link-text">Home</span>
-                </a></li>
-                <li><a href="/bio.html" class="sidebar-link">
-                    <i class="fas fa-user"></i>
-                    <span class="link-text">Bio</span>
-                </a></li>
-                <li><a href="/experience.html" class="sidebar-link">
-                    <i class="fas fa-briefcase"></i>
-                    <span class="link-text">Experience</span>
-                </a></li>
-                <li><a href="/projects/" class="sidebar-link" aria-current="page">
-                    <i class="fas fa-code"></i>
-                    <span class="link-text">Projects</span>
-                </a></li>
-                <li><a href="/contact.html" class="sidebar-link">
-                    <i class="fas fa-envelope"></i>
-                    <span class="link-text">Contact</span>
-                </a></li>
-            </ul>
+    <div class="layout">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a href="/">~/ibraheem</a>
+            <a href="/projects/" aria-current="page">projects</a>
+            <a href="/bio.html">bio</a>
+            <a href="/experience.html">experience</a>
+            <a href="/contact.html">contact</a>
+            <a href="/resume.pdf" download>resume.pdf</a>
         </nav>
-    </aside>
 
-    <!-- Desktop Toggle Button -->
-    <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
-        <i class="fas fa-chevron-left"></i>
-    </button>
+        <main id="mainContent">
+            <h1>Robotics Projects</h1>
+            <p class="lead">Direct and fast view of my robotics work. Case study and GitHub links are provided on each item.</p>
 
-    <!-- Mobile Toggle Button -->
-    <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-
-    <!-- Overlay for mobile backdrop -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <main class="main-content" id="mainContent">
-        <section class="projects-direct">
-            <div class="container narrow">
-                <h1>Robotics Projects</h1>
-                <p class="subtitle">Direct overview of current and past robotics work.</p>
-                <div class="quick-links">
-                    <a href="/resume.pdf" class="btn btn-small" download>Resume</a>
-                    <a href="/contact.html" class="btn btn-small">Contact</a>
-                    <a href="https://github.com/ibraheem-111" class="btn btn-small" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-                </div>
-
-                <div class="projects-list">
-                    <!-- Project 1: Quadruped RL with 2-DoF Spine -->
-                    <article class="project-item">
-                        <div class="project-content">
-                            <h3>Quadruped RL with 2-DoF Spine</h3>
-                            <p class="project-date">February 2026 - Present</p>
-                            <p class="project-summary">One-month challenge project: modified a Unitree Go2 with a 2-joint spine and trained an RL policy for tight-corner navigation in narrow hallways.</p>
-                            <div class="project-tech">
-                                <span>Reinforcement Learning</span>
-                                <span>Isaac Sim</span>
-                                <span>Python</span>
-                                <span>Robot Dynamics</span>
-                                <span>IMU</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="/projects/quadruped-rl-2dof-spine.html" class="btn btn-primary">View Case Study</a>
-                                <a href="https://github.com/ibraheem-111/quadruped-spine-link" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                <!-- TODO: Add demo video URL -->
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 1: Nonlinear Peer-Aware Cost Estimation -->
-                    <article class="project-item">
-                        <div class="project-content">
-                            <h3>Nonlinear Peer-Aware Cost Estimation</h3>
-                            <p class="project-date">August 2025 - Ongoing</p>
-                            <p class="project-summary">Research project developing a mobile robot that moves based on a nonlinear cost function, with real-time motion capture calibration and model predictive control.</p>
-                            <div class="project-tech">
-                                <span>ROS</span>
-                                <span>C++</span>
-                                <span>Motion Capture</span>
-                                <span>EKF</span>
-                                <span>MPC</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="/projects/nonlinear-peer-aware-cost-estimation.html" class="btn btn-primary">View Case Study</a>
-                                <!-- TODO: Add project GitHub repository URL -->
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add GitHub repository">GitHub</a>
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 2: NL Pick and Place Robot -->
-                    <article class="project-item">
-                        <div class="project-content">
-                            <h3>Natural Language Controlled Pick and Place Robot</h3>
-                            <p class="project-date">November 2025 - December 2025</p>
-                            <p class="project-summary">Developed a robot system that interprets natural language commands to pick and place objects of different colors and sizes using stereoscopic 3D perception and ROS2 actions.</p>
-                            <div class="project-tech">
-                                <span>ROS2</span>
-                                <span>Python</span>
-                                <span>Computer Vision</span>
-                                <span>NLP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="/projects/nl-pick-and-place.html" class="btn btn-primary">View Case Study</a>
-                                <!-- TODO: Add project GitHub repository URL -->
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add GitHub repository">GitHub</a>
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3: Maze Solving Robot -->
-                    <article class="project-item">
-                        <div class="project-content">
-                            <h3>Maze Solving Robot</h3>
-                            <p class="project-date">September 2025 - October 2025</p>
-                            <p class="project-summary">Implemented a vision-based maze solving system using VLMs for supervision and A* search algorithm for pathfinding.</p>
-                            <div class="project-tech">
-                                <span>OpenCLIP</span>
-                                <span>YOLO</span>
-                                <span>CV2</span>
-                                <span>A* Search</span>
-                            </div>
-                            <div class="project-links">
-                                <!-- TODO: Add project GitHub repository URL -->
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add GitHub repository">GitHub</a>
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 4: Throat Swab Robot -->
-                    <article class="project-item">
-                        <div class="project-content">
-                            <h3>Design and Control of Throat Swab Sampling Robot</h3>
-                            <p class="project-date">July 2021 - May 2022</p>
-                            <p class="project-summary">Capstone project: Full-stack robotic system design from mechanical CAD through control implementation. Achieved 3rd place in industrial competition.</p>
-                            <div class="project-tech">
-                                <span>SOLIDWORKS</span>
-                                <span>MSC Adams</span>
-                                <span>MATLAB</span>
-                                <span>ROS</span>
-                            </div>
-                            <div class="project-links">
-                                <!-- TODO: Add project GitHub repository URL -->
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add GitHub repository">GitHub</a>
-                                <a href="#" class="btn btn-secondary" aria-disabled="true" title="TODO: Add demo video">Demo</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="block">
+                <div><span class="prompt">$</span>ls ./projects --sort=date</div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
-            <p><a href="/">Home</a> | <a href="/bio.html">Bio</a> | <a href="/experience.html">Experience</a> | <a href="/projects/">Projects</a> | <a href="/contact.html">Contact</a> | <a href="/resume.pdf">Resume</a></p>
-        </div>
-    </footer>
+            <section class="project" aria-labelledby="quadruped-title">
+                <h2 id="quadruped-title">Quadruped RL with 2-DoF Spine</h2>
+                <p class="meta">Feb 2026 - Present | Personal month-long challenge | Tempe, AZ</p>
+                <p class="desc">Modified a Unitree Go2 with a 2-joint spine and trained an RL policy for tight-corner navigation in narrow hallways. Designed observation/action spaces using IMU, joint states, and relative obstacle-goal pose. Training done in Isaac Sim with iterative dynamics constraints.</p>
+                <p class="tags">tech: Reinforcement Learning, Isaac Sim, Python, Robot Dynamics, IMU</p>
+                <p class="links">
+                    <a href="/projects/quadruped-rl-2dof-spine.html">case-study</a>
+                    <a href="https://github.com/ibraheem-111/quadruped-spine-link" target="_blank" rel="noopener noreferrer">github</a>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
 
-    <script src="/script.js"></script>
+            <section class="project" aria-labelledby="nonlinear-title">
+                <h2 id="nonlinear-title">Nonlinear Peer-Aware Cost Estimation</h2>
+                <p class="meta">Aug 2025 - Ongoing | GHOST Lab, ASU</p>
+                <p class="desc">Mobile robot navigation using a nonlinear cost function with motion-capture calibration, EKF filtering, and model predictive control.</p>
+                <p class="tags">tech: ROS, C++, Motion Capture, EKF, MPC</p>
+                <p class="links">
+                    <a href="/projects/nonlinear-peer-aware-cost-estimation.html">case-study</a>
+                    <span class="disabled">github (todo)</span>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
+
+            <section class="project" aria-labelledby="nlpp-title">
+                <h2 id="nlpp-title">Natural Language Controlled Pick and Place Robot</h2>
+                <p class="meta">Nov 2025 - Dec 2025 | Arizona State University</p>
+                <p class="desc">Built a robot system that maps user language commands into pick/place actions using ROS2 orchestration and 3D perception.</p>
+                <p class="tags">tech: ROS2, Python, Computer Vision, NLP</p>
+                <p class="links">
+                    <a href="/projects/nl-pick-and-place.html">case-study</a>
+                    <span class="disabled">github (todo)</span>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
+
+            <section class="project" aria-labelledby="maze-title">
+                <h2 id="maze-title">Maze Solving Robot</h2>
+                <p class="meta">Sep 2025 - Oct 2025 | Arizona State University</p>
+                <p class="desc">Vision-based maze solving with VLM supervision and A* search for pathfinding.</p>
+                <p class="tags">tech: OpenCLIP, YOLO, CV2, A* Search</p>
+                <p class="links">
+                    <span class="disabled">github (todo)</span>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
+
+            <section class="project" aria-labelledby="swab-title">
+                <h2 id="swab-title">Design and Control of Throat Swab Sampling Robot</h2>
+                <p class="meta">Jul 2021 - May 2022 | Capstone Project</p>
+                <p class="desc">6-DOF robotic system from CAD and dynamic analysis to inverse kinematics and ROS-based network control. Placed 3rd out of 25 teams.</p>
+                <p class="tags">tech: SOLIDWORKS, MSC Adams, MATLAB, ROS</p>
+                <p class="links">
+                    <span class="disabled">github (todo)</span>
+                    <span class="disabled">demo (todo)</span>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div><span class="prompt">$</span>echo "© 2026 Muhammad Ibraheem"</div>
+        </footer>
+    </div>
 </body>
 </html>
