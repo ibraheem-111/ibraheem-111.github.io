@@ -106,10 +106,11 @@ h3 {
 }
 
 .block {
-    margin: 14px 0;
-    border: 1px solid var(--border);
-    background: var(--panel);
-    padding: 10px;
+    margin: 14px 0 10px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--text);
 }
 
 .project,
@@ -172,6 +173,83 @@ h3 {
     margin-right: 14px;
 }
 
+.project-details {
+    margin: 8px 0 10px;
+    border-left: 2px solid var(--border);
+    padding-left: 10px;
+}
+
+.project-details summary {
+    color: var(--link);
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+}
+
+.project-toggle {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 0;
+    margin: 10px 0 12px;
+}
+
+.project-toggle summary {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 12px;
+    list-style: none;
+    color: var(--text);
+    border-bottom: 1px solid transparent;
+}
+
+.project-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-toggle[open] summary {
+    border-bottom-color: var(--border);
+}
+
+.toggle-num {
+    color: #8a9095;
+    font-size: 12px;
+}
+
+.toggle-title {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.toggle-meta {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.project-toggle > .desc,
+.project-toggle > .tags,
+.project-toggle > .list,
+.project-toggle > .links {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.project-toggle > .links {
+    margin-bottom: 12px;
+}
+
+.project-details[open] summary {
+    margin-bottom: 6px;
+}
+
+.project-details summary:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
 .list {
     margin: 8px 0;
     padding-left: 20px;
@@ -209,6 +287,15 @@ footer {
     .profile-photo {
         width: 130px;
         height: 165px;
+    }
+
+    .project-toggle summary {
+        grid-template-columns: 34px 1fr;
+    }
+
+    .toggle-meta {
+        grid-column: 2;
+        font-size: 11px;
     }
 }
 
