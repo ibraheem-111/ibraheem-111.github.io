@@ -24,15 +24,43 @@
     <meta name="twitter:description" content="MS Robotics student at ASU specializing in autonomous systems, ROS/ROS2, and AI.">
     <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
 
+    <!-- Robots & SEO -->
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#2a2a72">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ibraheem",
+        "jobTitle": "MS Robotics and Autonomous Systems Student",
+        "url": "https://ibraheem-111.github.io",
+        "image": "https://ibraheem-111.github.io/ibraheem.jpg",
+        "sameAs": [
+            "https://github.com/ibraheem-111",
+            "https://www.linkedin.com/in/muhammad-ibraheem-abb066152/"
+        ],
+        "location": {
+            "@type": "Place",
+            "name": "Tempe, Arizona, USA"
+        },
+        "description": "Masters student in Robotics and Autonomous Systems at Arizona State University with expertise in ROS/ROS2, Machine Learning, and autonomous systems development."
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="mask-icon" href="/favicon.svg" color="#2a2a72">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Skip to Content Link -->
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
         <div class="sidebar-header">
@@ -43,9 +71,13 @@
         </div>
         <nav class="sidebar-nav">
             <ul class="sidebar-links">
-                <li><a href="#about" class="sidebar-link">
+                <li><a href="#projects" class="sidebar-link" data-primary-nav="projects">
+                    <i class="fas fa-code"></i>
+                    <span class="link-text">Projects</span>
+                </a></li>
+                <li><a href="#about" class="sidebar-link" data-primary-nav="bio">
                     <i class="fas fa-user"></i>
-                    <span class="link-text">About</span>
+                    <span class="link-text">Bio</span>
                 </a></li>
                 <li><a href="#academic" class="sidebar-link">
                     <i class="fas fa-graduation-cap"></i>
@@ -54,10 +86,6 @@
                 <li><a href="#experience" class="sidebar-link">
                     <i class="fas fa-briefcase"></i>
                     <span class="link-text">Experience</span>
-                </a></li>
-                <li><a href="#projects" class="sidebar-link">
-                    <i class="fas fa-code"></i>
-                    <span class="link-text">Projects</span>
                 </a></li>
                 <li><a href="#interests" class="sidebar-link">
                     <i class="fas fa-heart"></i>
@@ -93,10 +121,14 @@
                 <h1>Muhammad Ibraheem</h1>
                 <p class="subtitle">Masters Student in Robotics & Autonomous Systems</p>
                 <div class="hero-cta">
-                    <a href="ibraheem_12142025_robotics_and_ai.pdf" download class="btn btn-outline" aria-label="Download Resume PDF">
+                    <a href="/resume.pdf" download class="btn btn-outline" aria-label="Download Resume PDF">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="section-switch" aria-label="Primary homepage sections">
+                    <a href="#projects" class="section-switch-link is-active" data-switch-target="projects">Projects</a>
+                    <a href="#about" class="section-switch-link" data-switch-target="bio">Bio</a>
                 </div>
             </div>
             <h2>About Me</h2>
@@ -140,7 +172,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="ibraheem.jpg" alt="Muhammad Ibraheem" class="profile-image">
+                    <img src="/ibraheem.jpg" alt="Muhammad Ibraheem, MS Robotics student at Arizona State University" class="profile-image">
                 </div>
             </div>
         </div>
@@ -230,7 +262,14 @@
                             <li>Developed ROS nodes in C++ for real time control of the robot and feedback collection</li>
                             <li>Used Enhanced Kalman Filters (EKF) to reduce noise in motion capture data</li>
                             <li>Applied Model Predictive Control (MPC) to control the robot's movement</li>
+                            <li>Incorporated Bayesian intent inference to enable belief-aware decision making in multi-agent navigation</li>
                         </ul>
+                        <div class="project-links">
+                            <a href="/projects/nonlinear-peer-aware-cost-estimation.html" class="btn btn-small">Case Study</a>
+                            <!-- TODO: Add project GitHub repository URL -->
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -250,7 +289,14 @@
                             <li>Programmed a robot to pick and place different colored and sized blocks based on user's instructions</li>
                             <li>Created a ROS2 node called orchestrator that delegated tasks to other nodes using ROS2 actions</li>
                             <li>Stereoscopic 3D perception algorithm to identify size and depth of blocks</li>
+                            <li>Implemented node-level retries and feedback checks to recover from failed grasp/place attempts</li>
                         </ul>
+                        <div class="project-links">
+                            <a href="/projects/nl-pick-and-place.html" class="btn btn-small">Case Study</a>
+                            <!-- TODO: Add project GitHub repository URL -->
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -273,6 +319,11 @@
                             <li>Implemented A* search to find the solution to the maze</li>
                             <li>Enhanced performance using multi-threading to segregate the motion control and maze detection modules</li>
                         </ul>
+                        <div class="project-links">
+                            <!-- TODO: Add project GitHub repository URL -->
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -292,9 +343,15 @@
                             <li>Achieved the 3rd position in the industrial open house of 2022 out of 25 competing groups</li>
                             <li>Designed the robot using SOLID Works and MSC Adams for dynamic analysis</li>
                             <li>Simulated the inverse kinematic equations for calculating joint angles in MATLAB</li>
+                            <li>Used the Jacobian matrix to calculate required joint torques for the manipulator</li>
                             <li>Developed ROS nodes for controlling the robot over the network</li>
-                            <li>Tuned the control parameters and sensors to work on the real robot</li>
+                            <li>Deployed ROS control nodes on a Raspberry Pi and tuned parameters directly on hardware</li>
                         </ul>
+                        <div class="project-links">
+                            <!-- TODO: Add project GitHub repository URL -->
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add GitHub repository link">GitHub</a>
+                            <a href="#" class="btn btn-small" aria-disabled="true" title="TODO: Add demo video link">Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -361,6 +418,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html> 

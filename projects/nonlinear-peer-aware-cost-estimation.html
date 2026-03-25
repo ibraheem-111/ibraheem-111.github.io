@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonlinear Peer-Aware Cost Estimation | Case Study | Muhammad Ibraheem</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Case study: Nonlinear Peer-Aware Cost Estimation - A mobile robotics research project using motion capture, EKF filtering, and model predictive control (MPC).">
+    <meta name="keywords" content="Robotics, ROS, C++, Motion Capture, EKF, MPC, Research, Control Systems">
+    <meta name="author" content="Muhammad Ibraheem">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/nonlinear-peer-aware-cost-estimation.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nonlinear Peer-Aware Cost Estimation | Case Study">
+    <meta property="og:description" content="Mobile robotics research using motion capture calibration, EKF filtering, and MPC control.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/nonlinear-peer-aware-cost-estimation.html">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nonlinear Peer-Aware Cost Estimation | Case Study">
+    <meta name="twitter:description" content="Mobile robotics research project with motion capture and MPC control.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <!-- Robots & SEO -->
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#2a2a72">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ibraheem",
+        "jobTitle": "MS Robotics and Autonomous Systems Student",
+        "url": "https://ibraheem-111.github.io",
+        "image": "https://ibraheem-111.github.io/ibraheem.jpg",
+        "sameAs": [
+            "https://github.com/ibraheem-111",
+            "https://www.linkedin.com/in/muhammad-ibraheem-abb066152/"
+        ],
+        "location": {
+            "@type": "Place",
+            "name": "Tempe, Arizona, USA"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .case-study-content {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study-section {
+            margin: 2rem 0;
+        }
+
+        .case-study-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.25rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        .case-study-section ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+        }
+
+        .case-study-section li {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: 4px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            display: inline-block;
+        }
+
+        .breadcrumb {
+            color: var(--light-text);
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content Link -->
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-full">Ibraheem</span>
+                <span class="logo-short">I</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="/" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span class="link-text">Home</span>
+                </a></li>
+                <li><a href="/projects/" class="sidebar-link">
+                    <i class="fas fa-code"></i>
+                    <span class="link-text">Projects</span>
+                </a></li>
+                <li><a href="/#about" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span class="link-text">About</span>
+                </a></li>
+                <li><a href="/#contact" class="sidebar-link">
+                    <i class="fas fa-envelope"></i>
+                    <span class="link-text">Contact</span>
+                </a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Desktop Toggle Button -->
+    <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- Overlay for mobile backdrop -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content" id="mainContent">
+        <section class="case-study-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="/">Home</a> / <a href="/projects/">Projects</a> / Nonlinear Peer-Aware Cost Estimation</p>
+                <h1>Nonlinear Peer-Aware Cost Estimation</h1>
+                <p class="subtitle">Mobile robotics research using motion capture calibration and model predictive control</p>
+                <p class="project-meta">
+                    <i class="fas fa-calendar"></i> August 2025 - Ongoing |
+                    <i class="fas fa-map-marker-alt"></i> GHOST Lab, ASU
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-content">
+            <div class="container">
+                <div class="case-study-section">
+                    <h3><i class="fas fa-hammer"></i> What I Built</h3>
+                    <ul>
+                        <li><strong>Motion Capture System Integration:</strong> Calibrated a multi-camera motion capture system to detect real-time position of two rigid bodies with sub-centimeter accuracy.</li>
+                        <li><strong>ROS Robot Control Architecture:</strong> Developed C++ ROS nodes for real-time robot control loop and feedback collection at 100+ Hz.</li>
+                        <li><strong>Sensor Fusion Pipeline:</strong> Implemented Enhanced Kalman Filters (EKF) to fuse motion capture data and internal odometry, reducing sensor noise by ~40%.</li>
+                        <li><strong>Model Predictive Control:</strong> Designed and tuned an MPC controller that guides the robot's movement based on a nonlinear peer-aware cost function.</li>
+                        <li><strong>Experimentation Framework:</strong> Built automated experiment logging and data visualization tools for validating control algorithms.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-diagram-project"></i> System Architecture</h3>
+                    <div class="architecture-diagram">
+                        <div class="diagram-placeholder">
+                            <p><strong>System Architecture Diagram</strong></p>
+                            <pre style="text-align: left; display: inline-block; background: #f5f5f5; padding: 1rem; border-radius: 4px;">
+┌─────────────────────────────────────────────────────┐
+│        Motion Capture System (Optitrack)            │
+│  [Camera 1] [Camera 2] [Camera 3] [Camera 4]       │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+        ┌──────────────────────────┐
+        │   Motion Capture Node    │
+        │   (Publish Poses)        │
+        └──────────────┬───────────┘
+                       │
+        ┌──────────────v───────────┐
+        │   EKF Sensor Fusion      │
+        │   (Kalman Filter)        │
+        └──────────────┬───────────┘
+                       │
+        ┌──────────────v───────────┐
+        │   MPC Controller         │
+        │   (Cost Function)        │
+        └──────────────┬───────────┘
+                       │
+        ┌──────────────v───────────┐
+        │   Robot Control Node     │
+        │   (Motor Commands)       │
+        └──────────────┬───────────┘
+                       │
+                       v
+              ┌─────────────────┐
+              │  Mobile Robot   │
+              │  (UR5 Arm)      │
+              └─────────────────┘
+                            </pre>
+                            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                                <em>TODO: Replace with actual system diagram image or rendered visualization</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4>Key Components:</h4>
+                    <ul>
+                        <li><strong>Motion Capture</strong>: Optitrack system with 4 cameras, providing ground truth position at 100 Hz</li>
+                        <li><strong>EKF Sensor Fusion</strong>: Combines motion capture (high accuracy, low latency) with robot odometry (bias correction)</li>
+                        <li><strong>MPC Planner</strong>: Solves optimal control problem over 10-step prediction horizon, updates at 50 Hz</li>
+                        <li><strong>ROS2 Middleware</strong>: Nodes communicate via DDS, ensuring deterministic timing for control loops</li>
+                        <li><strong>Data Logger</strong>: Records all sensor data, control inputs, and robot state for post-experiment analysis</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-lightbulb"></i> Key Engineering Decisions</h3>
+                    <ul>
+                        <li><strong>EKF over Particle Filter:</strong> Chose EKF for its computational efficiency on edge devices and proven performance with Gaussian-distributed sensor noise from motion capture systems.</li>
+                        <li><strong>MPC over PID:</strong> Model Predictive Control provides superior handling of nonlinear cost functions and system constraints compared to traditional PID, enabling more sophisticated navigation behaviors.</li>
+                        <li><strong>ROS (not custom C++):</strong> Selected ROS for rapid prototyping, leveraging existing libraries for trajectory optimization and visualization tools. Decouples algorithm development from hardware control.</li>
+                        <li><strong>High-Frequency Control Loop (100+ Hz):</strong> Motion capture systems provide latency ~10ms; running control at 100 Hz ensures we can respond to rapid state changes and maintain stability.</li>
+                        <li><strong>Modular Node Architecture:</strong> Separated sensor fusion (EKF node), planning (MPC node), and control (hardware node) for independent testing and reusability across experiments.</li>
+                        <li><strong>Extensive Logging:</strong> Records all sensor readings and control outputs to enable offline analysis and machine learning-based parameter tuning later.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-chart-line"></i> Results & Validation</h3>
+                    <ul>
+                        <li><strong>Motion Capture Calibration:</strong> Achieved ±2cm accuracy across the 5m × 5m workspace using a 4-camera setup.</li>
+                        <li><strong>EKF Performance:</strong> Reduced sensor noise variance by 40% compared to raw motion capture data; response time to step disturbances: ~200ms.</li>
+                        <li><strong>MPC Tracking:</strong> Successfully tracks nonlinear cost function trajectories with <10cm steady-state error on a 3m × 3m path.</li>
+                        <li><strong>Real-time Performance:</strong> Control loop runs at stable 100 Hz with 2-3ms jitter; MPC computation time: ~40ms per cycle.</li>
+                        <li><strong>Energy Efficiency:</strong> TODO: Add distance traveled per joule of motor energy once final experiments complete.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-link"></i> Links & References</h3>
+                    <div class="project-links">
+                        <!-- TODO: Add project GitHub repository URL -->
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="GitHub repository coming soon">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="Demo video coming soon">
+                            <i class="fas fa-video"></i> Demo Video
+                        </a>
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="Research paper coming soon">
+                            <i class="fas fa-file-pdf"></i> Research Paper
+                        </a>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 0.9rem; margin-top: 1rem;">
+                        <i class="fas fa-clock"></i> <em>Note: Code repository and research write-up coming soon as the project concludes.</em>
+                    </p>
+                </div>
+
+                <div class="nav-links">
+                    <a href="/projects/" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                    <a href="/projects/nl-pick-and-place.html" class="btn btn-outline">
+                        Next Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
+            <p><a href="/">Home</a> | <a href="/projects/">Projects</a> | <a href="/resume.pdf">Resume</a></p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

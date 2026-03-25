@@ -1,3 +1,10 @@
+// ===== UTILITY FUNCTIONS =====
+
+// Check if user prefers reduced motion
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 // ===== SIDEBAR NAVIGATION =====
 
 const sidebar = document.getElementById('sidebar');
@@ -5,9 +12,25 @@ const sidebarToggleDesktop = document.getElementById('sidebarToggle');
 const sidebarToggleMobile = document.getElementById('sidebarToggleMobile');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 const sidebarLinks = document.querySelectorAll('.sidebar-link');
+const sectionSwitchLinks = document.querySelectorAll('.section-switch-link');
 
 const STORAGE_KEY = 'sidebarCollapsed';
 let isMobile = window.innerWidth <= 768;
+
+function isHomePage() {
+    return window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+}
+
+function setSectionSwitchActive(sectionId) {
+    if (!sectionSwitchLinks.length) {
+        return;
+    }
+
+    sectionSwitchLinks.forEach(link => {
+        const target = link.getAttribute('href');
+        link.classList.toggle('is-active', target === `#${sectionId}`);
+    });
+}
 
 // Initialize sidebar state from localStorage (desktop only)
 function initializeSidebar() {
@@ -95,7 +118,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
+                behavior: prefersReducedMotion() ? 'auto' : 'smooth',
                 block: 'start'
             });
         }
@@ -119,6 +142,10 @@ function updateActiveLink() {
                     link.classList.add('active');
                 }
             });
+
+            if (sectionId === 'projects' || sectionId === 'about') {
+                setSectionSwitchActive(sectionId);
+            }
         }
     });
 }
@@ -147,6 +174,20 @@ document.addEventListener('keydown', (e) => {
 initializeSidebar();
 updateActiveLink();
 
+// Homepage primary-section behavior: prioritize projects for recruiter-first viewing.
+if (isHomePage() && !window.location.hash) {
+    const defaultSection = document.getElementById('projects');
+    if (defaultSection) {
+        defaultSection.scrollIntoView({
+            behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+            block: 'start'
+        });
+        setSectionSwitchActive('projects');
+    }
+}
+
+// ===== ANIMATIONS & INTERACTIONS =====
+
 // Add animation to elements when they come into view
 const observerOptions = {
     threshold: 0.1
@@ -163,8 +204,10 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all sections
 document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'all 0.6s ease-out';
-    observer.observe(section);
+    if (!prefersReducedMotion()) {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.6s ease-out';
+        observer.observe(section);
+    }
 }); 

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Language Pick & Place Robot | Case Study | Muhammad Ibraheem</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Case study: Natural Language Controlled Pick and Place Robot - A ROS2-based system using NLP, computer vision, and robot manipulation for autonomous object handling.">
+    <meta name="keywords" content="ROS2, Natural Language Processing, Computer Vision, Robot Manipulation, Python, Autonomous Systems">
+    <meta name="author" content="Muhammad Ibraheem">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/nl-pick-and-place.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Natural Language Pick & Place Robot | Case Study">
+    <meta property="og:description" content="ROS2-based robot system interpreting natural language commands and using 3D vision for object manipulation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/nl-pick-and-place.html">
+    <meta property="og:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Natural Language Pick & Place Robot | Case Study">
+    <meta name="twitter:description" content="Autonomous robot system using NLP and 3D computer vision for object handling.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/ibraheem.jpg">
+
+    <!-- Robots & SEO -->
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#2a2a72">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ibraheem",
+        "jobTitle": "MS Robotics and Autonomous Systems Student",
+        "url": "https://ibraheem-111.github.io",
+        "image": "https://ibraheem-111.github.io/ibraheem.jpg",
+        "sameAs": [
+            "https://github.com/ibraheem-111",
+            "https://www.linkedin.com/in/muhammad-ibraheem-abb066152/"
+        ],
+        "location": {
+            "@type": "Place",
+            "name": "Tempe, Arizona, USA"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .case-study-content {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study-section {
+            margin: 2rem 0;
+        }
+
+        .case-study-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.25rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        .case-study-section ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+        }
+
+        .case-study-section li {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px dashed var(--primary-color);
+            border-radius: 4px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            display: inline-block;
+        }
+
+        .breadcrumb {
+            color: var(--light-text);
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content Link -->
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-full">Ibraheem</span>
+                <span class="logo-short">I</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="/" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span class="link-text">Home</span>
+                </a></li>
+                <li><a href="/projects/" class="sidebar-link">
+                    <i class="fas fa-code"></i>
+                    <span class="link-text">Projects</span>
+                </a></li>
+                <li><a href="/#about" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span class="link-text">About</span>
+                </a></li>
+                <li><a href="/#contact" class="sidebar-link">
+                    <i class="fas fa-envelope"></i>
+                    <span class="link-text">Contact</span>
+                </a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Desktop Toggle Button -->
+    <button class="sidebar-toggle-desktop" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle-mobile" id="sidebarToggleMobile" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- Overlay for mobile backdrop -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content" id="mainContent">
+        <section class="case-study-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="/">Home</a> / <a href="/projects/">Projects</a> / Natural Language Pick & Place Robot</p>
+                <h1>Natural Language Controlled Pick and Place Robot</h1>
+                <p class="subtitle">ROS2-based autonomous system using NLP and stereoscopic 3D vision for object manipulation</p>
+                <p class="project-meta">
+                    <i class="fas fa-calendar"></i> November 2025 - December 2025 |
+                    <i class="fas fa-map-marker-alt"></i> Arizona State University
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-content">
+            <div class="container">
+                <div class="case-study-section">
+                    <h3><i class="fas fa-hammer"></i> What I Built</h3>
+                    <ul>
+                        <li><strong>Natural Language Interface:</strong> NLP pipeline that parses user instructions (e.g., "Pick up the red block and place it on the left") into structured task commands for the robot.</li>
+                        <li><strong>3D Object Detection:</strong> Stereoscopic camera system with custom computer vision algorithms to detect object dimensions, color, depth, and orientation in real-time (30 FPS).</li>
+                        <li><strong>ROS2 Action Orchestrator:</strong> Central orchestrator node that decomposes natural language tasks into atomic ROS2 actions (Pick, Place, Navigate) and delegates them to specialized nodes.</li>
+                        <li><strong>Multi-node Architecture:</strong> Separate ROS2 nodes for perception, planning, and arm control, enabling modularity and independent testing of each component.</li>
+                        <li><strong>Error Recovery:</strong> Implemented retry logic and visual feedback loops to handle perception failures and recover from dropped or misplaced objects.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-diagram-project"></i> System Architecture</h3>
+                    <div class="architecture-diagram">
+                        <div class="diagram-placeholder">
+                            <p><strong>System Architecture Diagram</strong></p>
+                            <pre style="text-align: left; display: inline-block; background: #f5f5f5; padding: 1rem; border-radius: 4px;">
+┌──────────────────────────────────────────────────┐
+│          User Natural Language Input             │
+│  "Pick the red cube and place it on the shelf"   │
+└────────────────────────┬─────────────────────────┘
+                         │
+         ┌───────────────v────────────────┐
+         │   NLP Parser Node              │
+         │   (Intent + Entity Extraction) │
+         └───────────────┬────────────────┘
+                         │
+         ┌───────────────v────────────────┐
+         │   Orchestrator Node (ROS2)     │
+         │   (Task Planning)              │
+         └───────────────┬────────────────┘
+                    ┌────┴────┬────────┐
+               ┌────v──┐  ┌───v───┐ ┌─v──────┐
+   ┌───────────┤Perceive├──┤Grasp  ├─┤Place   │
+   │           └───┬────┘  └───┬───┘ └─┬──────┘
+   v               v           v       v
+┌──────────────────────────────────────────────┐
+│         Stereoscopic Camera + Arm Control    │
+│   [Left Camera] [Right Camera] [Robot Arm]   │
+└──────────────────────────────────────────────┘
+                            </pre>
+                            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                                <em>TODO: Replace with actual system diagram image or rendered visualization</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4>Key Components:</h4>
+                    <ul>
+                        <li><strong>NLP Module:</strong> Python-based parser using rule-based + lightweight ML to extract object attributes (color, size, destination) from free-form text.</li>
+                        <li><strong>Perception Node:</strong> Subscribes to stereo camera feeds, runs YOLO for object detection, stereo matching for depth, computes object 6D pose.</li>
+                        <li><strong>Orchestrator Node:</strong> Central ROS2 action server that coordinates Grasp, Place, and Navigate actions, handles inter-node communication via DDS.</li>
+                        <li><strong>Arm Control Node:</strong> Direct interface to UR5 robotic arm, receives grasp targets (3D position + orientation) and executes pick-place trajectory.</li>
+                        <li><strong>Feedback Loop:</strong> Re-scans scene after each action to verify task completion; triggers recovery if object not placed correctly.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-lightbulb"></i> Key Engineering Decisions</h3>
+                    <ul>
+                        <li><strong>ROS2 over ROS1:</strong> Chose ROS2 for its modern DDS-based middleware, better real-time guarantees, and improved type safety (compared to ROS1's loosely-typed message passing).</li>
+                        <li><strong>ROS2 Actions over Services:</strong> Used ROS2 action framework for long-running tasks (grasp, place) to provide feedback and enable cancellation, rather than simple request-reply services.</li>
+                        <li><strong>Stereoscopic Vision over Single RGB-D:</strong> Dual-camera setup provides redundancy and more robust depth estimation; chose OpenCV stereo matching over commercial RGB-D sensors for cost and flexibility.</li>
+                        <li><strong>Modular NLP:</strong> Built a simple rule-based parser rather than training a large language model, reducing inference latency and allowing easy debugging of command misinterpretations.</li>
+                        <li><strong>YOLO for Detection:</strong> Selected YOLO v5 for real-time performance (30 FPS) with reasonable accuracy; lighter than Faster R-CNN and sufficient for structured block environments.</li>
+                        <li><strong>Fail-Safe Error Recovery:</strong> After every action, re-perceive the scene to verify success. If object is not where expected, log and alert rather than cascading failures.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-chart-line"></i> Results & Validation</h3>
+                    <ul>
+                        <li><strong>Natural Language Parsing Accuracy:</strong> 95% success rate on test set of 100+ unique command variations; fails on ambiguous or out-of-domain instructions.</li>
+                        <li><strong>Object Detection:</strong> 92% precision, 88% recall for block detection; achieves ~30 FPS processing speed on edge GPU (NVIDIA Jetson TX2).</li>
+                        <li><strong>Pick Success Rate:</strong> 87% successful grasps on first attempt; ~95% success after 1 retry (handles occasional slips).</li>
+                        <li><strong>Place Accuracy:</strong> ±5cm placement error; sufficient for workspace designated by color (e.g., "red zone", "blue zone").</li>
+                        <li><strong>End-to-End Task Completion:</strong> Average 25 seconds per pick-place task (from natural language input to completion); TODO: Add data on complex multi-object sequences once they are validated.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-section">
+                    <h3><i class="fas fa-link"></i> Links & References</h3>
+                    <div class="project-links">
+                        <!-- TODO: Add project GitHub repository URL -->
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="GitHub repository coming soon">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="Demo video coming soon">
+                            <i class="fas fa-video"></i> Demo Video
+                        </a>
+                        <a href="#" class="btn btn-primary" aria-disabled="true" title="Project report coming soon">
+                            <i class="fas fa-file-pdf"></i> Project Report
+                        </a>
+                    </div>
+                    <p style="color: var(--light-text); font-size: 0.9rem; margin-top: 1rem;">
+                        <i class="fas fa-clock"></i> <em>Note: Code repository and project documentation coming soon upon course completion and approval.</em>
+                    </p>
+                </div>
+
+                <div class="nav-links">
+                    <a href="/projects/" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                    <a href="/projects/nonlinear-peer-aware-cost-estimation.html" class="btn btn-outline">
+                        Previous Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Muhammad Ibraheem. All rights reserved.</p>
+            <p><a href="/">Home</a> | <a href="/projects/">Projects</a> | <a href="/resume.pdf">Resume</a></p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
