@@ -13,9 +13,7 @@ A modern, responsive portfolio website showcasing my academic background in Robo
 ├── bio.html                            # Dedicated bio page
 ├── experience.html                     # Dedicated experience page
 ├── contact.html                        # Dedicated contact page
-├── styles.css                          # Single CSS file (1000+ lines), responsive design with accessibility
-├── script.js                           # Client-side navigation, sidebar toggles, smooth scrolling
-├── resume.pdf                          # Stable URL for resume download
+├── styles.css                          # Shared minimalist styling for all pages
 ├── robots.txt                          # SEO: crawler instructions
 ├── sitemap.xml                         # SEO: site structure for search engines
 ├── .nojekyll                           # Tells GitHub Pages to skip Jekyll processing
@@ -82,9 +80,7 @@ Then open `http://localhost:8000` in your browser.
 ### File Changes
 - Edit `index.html` for homepage content
 - Edit `styles.css` for styling (no CSS preprocessor needed)
-- Edit `script.js` for interactive behavior
 - Edit `projects/index.html` and project case study files for project section
-- Update `resume.pdf` with latest resume PDF when needed
 - Update `sitemap.xml` when adding/removing pages or projects
 
 ## 📊 Deployment on GitHub Pages
@@ -126,10 +122,8 @@ Since this is a static site with no build step:
 
 ## 📝 Content Alignment Notes
 
-### Resume & Experience Section
-- Resume PDF is located at `/resume.pdf` (stable URL)
-- Original dated PDF (`ibraheem_12142025_robotics_and_ai.pdf`) is kept in repo but not referenced in the site
-- **TODO**: Update resume PDF annually when needed; ensure it matches the Experience section on the website
+### Experience Section
+- Keep the Experience page aligned with your latest role/project updates.
 
 ### Project Links & Placeholders
 - Case study pages include placeholder TODO comments for external links (code repos, demo videos)
@@ -173,9 +167,9 @@ Since this is a static site with no build step:
 
 ## 📞 Contact & Links
 
-- **Email**: ibraheemsal@outlook.com
+- **Email**: mibrahe5@asu.edu
 - **GitHub**: https://github.com/ibraheem-111
-- **LinkedIn**: https://www.linkedin.com/in/muhammad-ibraheem-abb066152/
+- **LinkedIn**: https://www.linkedin.com/in/muhammad-ibraheem-robotics/
 - **Location**: Tempe, Arizona, USA
 
 ## 📄 License
