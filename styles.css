@@ -125,6 +125,20 @@ h3 {
     padding-bottom: 0;
 }
 
+.profile-entry {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 190px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
 .meta {
     margin: 0 0 8px;
     color: var(--muted);
@@ -186,6 +200,15 @@ footer {
 
     .top-nav {
         gap: 12px;
+    }
+
+    .profile-entry {
+        flex-direction: column;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 165px;
     }
 }
 
