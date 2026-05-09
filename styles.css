@@ -176,6 +176,16 @@ h3 {
     margin: 0 0 8px;
 }
 
+.plain-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.plain-link:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .tags {
     margin: 6px 0;
     color: var(--muted);
