@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Cave Exploration Drone (GNSS-Denied) | Case Study</title>
+    <meta name="description" content="Case study: frontier-based autonomous cave exploration with a GNSS-denied PX4/Gazebo quadrotor using RGB-D SLAM and reactive lidar avoidance.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Autonomous Cave Exploration Drone (GNSS-Denied) | Case Study">
+    <meta property="og:description" content="Frontier-based GNSS-denied cave mapping with PX4, ROS 2, RTAB-Map RGB-D SLAM, and external-vision EKF2 fusion.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ibraheem-111.github.io/projects/cave-exploration.html">
+    <meta property="og:image" content="https://ibraheem-111.github.io/projects/assets/cave-exploration/cave_entrance.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Autonomous Cave Exploration Drone (GNSS-Denied) | Case Study">
+    <meta name="twitter:description" content="PX4/ROS 2 quadrotor mapping a GNSS-denied cave with RGB-D SLAM and frontier exploration.">
+    <meta name="twitter:image" content="https://ibraheem-111.github.io/projects/assets/cave-exploration/cave_entrance.jpg">
+    <link rel="canonical" href="https://ibraheem-111.github.io/projects/cave-exploration.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- GoatCounter Analytics -->
+    <script data-goatcounter="https://ibraheem-111.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+    <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+    <div class="layout">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a href="/">~/ibraheem</a>
+            <a href="/">bio</a>
+            <a href="/projects/" aria-current="page">projects</a>
+            <a href="/experience.html">experience</a>
+            <a href="/contact.html">contact</a>
+        </nav>
+
+        <main id="mainContent">
+            <h1>Autonomous Cave Exploration Drone (GNSS-Denied)</h1>
+            <p class="lead">Frontier-based autonomous mapping of a GNSS-denied cave with a PX4/Gazebo quadrotor — RGB-D SLAM, external-vision EKF2 fusion, and reactive lidar avoidance.</p>
+
+            <div class="block"><span class="prompt">$</span>cat case-study.md</div>
+
+            <section class="entry">
+                <h2>Summary</h2>
+                <p class="meta">Apr 2026 - May 2026 | Arizona State University</p>
+                <p class="desc">Built a full simulation stack for autonomous mapping of an unknown cave where GNSS and compass are unavailable. A PX4/Gazebo quadrotor with RGB-D sensing, 2D lidar, and a front spotlight estimates its own motion visually, explores toward map frontiers, avoids walls reactively, and returns home — all without a global position source.</p>
+            </section>
+
+            <section class="entry">
+                <h2>What I built</h2>
+                <ul class="list">
+                    <li>A PX4/Gazebo cave drone equipped with an RGB-D camera, 2D lidar, IMU, and a front spotlight for the dark environment.</li>
+                    <li>A GNSS-denied PX4 estimator setup: EKF2 configured for external vision, taking position and heading from onboard perception instead of GPS.</li>
+                    <li>A ROS-to-PX4 odometry bridge converting RTAB-Map RGB-D odometry into PX4 <code>VehicleOdometry</code>, including the ENU/FLU &rarr; NED/FRD coordinate-frame handling.</li>
+                    <li>A ROS 2 autonomy node handling takeoff, cave entry, frontier exploration, sampled local path selection, reactive lidar avoidance, return behavior, and RViz marker visualization.</li>
+                    <li>CSV logging of pose, battery, coverage area, travel distance, and RTAB-Map feature counts for run-to-run comparison.</li>
+                </ul>
+            </section>
+
+            <section class="entry">
+                <h2>System</h2>
+                <figure class="figure">
+                    <img src="/projects/assets/cave-exploration/cave_entrance.jpg" alt="Simulated cave entrance in Gazebo used for the autonomous exploration demonstration." loading="lazy" width="900" height="794">
+                    <figcaption>Simulated cave entrance (Gazebo) used for the exploration runs.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="/projects/assets/cave-exploration/cave_drone_torch.jpg" alt="Quadrotor inside the cave with its front spotlight illuminating the tunnel walls." loading="lazy" width="900" height="759">
+                    <figcaption>The quadrotor navigating the cave with its front spotlight on.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="/projects/assets/cave-exploration/occupancy_grid.png" alt="2D occupancy grid built during exploration showing mapped free space and cave walls." loading="lazy" width="900" height="607">
+                    <figcaption>Occupancy grid produced during frontier-based exploration.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="/projects/assets/cave-exploration/cave_point_cloud.png" alt="3D point cloud reconstruction of the cave interior from RTAB-Map RGB-D SLAM." loading="lazy" width="514" height="401">
+                    <figcaption>Resulting RTAB-Map point cloud of the explored cave.</figcaption>
+                </figure>
+            </section>
+
+            <section class="entry">
+                <h2>Results</h2>
+                <ul class="list">
+                    <li>End-to-end GNSS-denied autonomous mapping working in simulation: PX4 SITL &harr; Gazebo &harr; ROS 2 &harr; RTAB-Map VIO &harr; EKF2 external-vision fusion &harr; frontier exploration.</li>
+                    <li>~2,900 lines of original Python, anchored by a 2,400+ line offboard autonomy state machine.</li>
+                    <li>Drafted an IEEE-format report covering the system architecture and the GNSS-denied estimator design.</li>
+                    <li>Honest scope: this is a course-project demonstration. Known limitations remain in local-planner robustness and obstacle avoidance — captured in a research roadmap toward a publishable contribution.</li>
+                </ul>
+                <p class="links">
+                    <a href="https://github.com/ibraheem-111/energy-and-uncertainty-aware-active-exploration" target="_blank" rel="noopener noreferrer">github</a>
+                    <span class="disabled">demo (todo)</span>
+                    <a href="/projects/">back-to-projects</a>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div><span class="prompt">$</span>echo "© 2026 Muhammad Ibraheem"</div>
+        </footer>
+    </div>
+</body>
+</html>
